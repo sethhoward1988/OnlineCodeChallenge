@@ -1,7 +1,7 @@
 $(function(){
 
 	// Global application code
-	var app = {
+	window.app = {
 		starterCode: {
 				html: 	'<!DOCTYPE html>\n' +
 						'<html>\n' +

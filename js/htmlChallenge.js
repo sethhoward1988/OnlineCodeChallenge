@@ -4,10 +4,8 @@ $(function(){
 	var doc = iframe.contentDocument;
 
 	$('#html-run').on('click', function (evt) {
-		var cm = $(evt.target).parent().find(".editor")[0].codeMirror;
-		var page = cm.getValue();
 		doc.open();
-		doc.write(page);
+		doc.write(app.codeMirrors.html.getValue());
 		doc.close();
 	});
 
