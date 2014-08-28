@@ -4,8 +4,23 @@ body {
 	font-weight: lighter;
 }
 
+.code {
+	font-family: monospace;
+	color: purple;
+}
+
 ul {
 	list-style-type: none;
+}
+
+.contents {
+	text-align: center;
+}
+
+.difficulty {
+	pointer-events: none;
+	font-size: 14px;
+	margin-left: 20px;
 }
 
 .intro {
@@ -19,21 +34,28 @@ ul {
 	width: 600px;
 	margin: 0 auto;
 	text-align: center;
+	margin-bottom: 20px;
 }
 
-.html .contents, .css .contents, .javascript .contents, .intro .contents {
+.inactive .html, .inactive .css, .inactive .javascript, .inactive .intro {
 	height: 0px;
 	overflow: hidden;
 	-webkit-transition: all 1s;
 }
 
-.html.active .contents, .css.active .contents, .javascript.active .contents, .intro.active .contents {
-	height: 500px;
+.html, .css, .javascript, .intro {
+	height: 50px;
+	overflow: hidden;
 	-webkit-transition: all 1s;
 }
 
-.intro.active .contents {
-	height: 100px;
+.html.active, .css.active, .javascript.active, .intro.active {
+	height: 650px !important;
+	-webkit-transition: all 1s;
+}
+
+.intro.active {
+	height: 150px !important;
 	-webkit-transition: all 1s;
 }
 
@@ -50,7 +72,9 @@ ul {
 .editor {
 	display: inline-block;
 	vertical-align: top;
-	width: 500px;
+	width: 600px;
+	border: 1px solid #ccc;
+	text-align: left;
 }
 
 .css .square {
@@ -68,6 +92,7 @@ iframe {
 }
 
 .challenges {
+	position: relative;
 	width: 1000px;
 	height: calc(100% - 30px);
 	margin: 0 auto;
@@ -138,9 +163,54 @@ h1:hover {
 }
 
 
+.button-container {
+	width: 200px;
+	margin: 0 auto;
+}
+
+/* #Silver Flat Button
+==================================================*/
+.silver-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 200px;
+  height: 40px;
+  padding: 0;
+  font-size: 18px;
+  color:white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #bdc3c7;
+  border: 0;
+  border-bottom: 2px solid #acb2b7;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #acb2b7;
+  box-shadow: inset 0 -2px #acb2b7;
+}
+.silver-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 
 
+
+/*BACK BUTTON*/
+
+.back {
+	background-image: url('img/back.png');
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	display: none;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 10;
+	cursor: pointer;
+}
 
 
 

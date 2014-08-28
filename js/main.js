@@ -12,13 +12,17 @@ $(function(){
 						'</html>\n',
 				css: 	'.square {\n\n' +
 						'}\n',
-				js: ''
+				javascript: 'function fruitCount (fruits) {\n\n' +
+						'    // Write code here\n\n' +
+						'} \n\n' + 
+						"fruitCount(['apple', 'banana', 'apple', 'orange', 'banana'])\n\n" +
+						"fruitCount(['kiwi', 'kiwi', 'berry', 'berry', 'berry'])\n\n"
 			},
 
 		codeMirrors: {
 			html: null,
 			css: null,
-			js: null
+			javascript: null
 		}
 	}
 
@@ -26,9 +30,11 @@ $(function(){
 	// Setup editors
 	$('.editor').each(function(index, editor){
 		var challenge = $(editor).attr('data-challenge');
+		var mode = (challenge == 'html' ? 'htmlmixed' : challenge);
 		var myCodeMirror = CodeMirror(editor, {
 		  value: app.starterCode[challenge],
-		  mode:  "javascript",
+		  mode:  mode,
+		  theme: "mdn-like",
 		  lineNumbers: true
 		});
 		app.codeMirrors[challenge] = myCodeMirror;
@@ -40,8 +46,25 @@ $(function(){
 			$(evt.target).parent().removeClass('active');
 			return;
 		}
-		$('.challenges div, .intro').removeClass('active');
-		$(evt.target).parent().addClass('active');
+		activateChallenge($(evt.target).parent());
 	});	
+
+	$('.back').on('click', function (evt) {
+		goInitialState();
+	});
+
+	function activateChallenge(challenge) {
+		$('.challenges div, .intro').removeClass('active');
+		$(challenge).addClass('active');
+		$('.challenges').addClass('inactive');
+		$('.back').fadeIn();
+	}
+
+	function goInitialState() {
+		$('.back').fadeOut();
+		$('.challenges div').removeClass('active');
+		$('.challenges').removeClass('inactive');
+		$('.intro').addClass('active');
+	}
 
 });

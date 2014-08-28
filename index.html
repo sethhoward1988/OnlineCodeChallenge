@@ -2,13 +2,19 @@
 	<head>
 		<script src="vendor/jquery.js"></script>
 		<script src="vendor/codemirror.js"></script>
+		<script src="vendor/xml.js"></script>
+		<script src="vendor/css.js"></script>
+		<script src="vendor/javascript.js"></script>
+		<script src="vendor/htmlmixed.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/htmlChallenge.js"></script>
 		<script src="js/cssChallenge.js"></script>
 		<script src="js/jsChallenge.js"></script>
+
 		<link rel="stylesheet" href="vendor/codemirror.css" />
 		<link rel="stylesheet" href="styles.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		<link href="vendor/mdn-like.css" rel="stylesheet" />
 	</head>
 	<body>
 		<div class="band">
@@ -17,6 +23,7 @@
 			</div>
 		</div>
 		<div class="challenges">
+			<div class="back"></div>
 			<div class="intro active">
 				<h1>Google Challenge Instructions</h1>
 				<div class="contents">
@@ -24,7 +31,7 @@
 				</div>
 			</div>
 			<div class="html">
-				<h1>HTML</h1>
+				<h1>HTML<span class="difficulty">Beginner</span></h1>
 				<div class="contents">
 					<div class="text">
 						<p>In this challenge, write an html document that contains the following.
@@ -37,31 +44,42 @@
 
 					<div class="editor" data-challenge="html"></div>
 					<iframe></iframe>
-
-					<button id="html-run">Test it!</button>
+					<div class="button-container">
+						<input id="html-run" value="Test it!" class="silver-flat-button" readonly/>
+					</div>
 				</div>
 			</div>
 			<div class="css">
-				<h1>CSS</h1>
+				<h1>CSS<span class="difficulty">Intermediate</span></h1>
 				<div class="contents">
 					<style id="css-style-tag" scoped></style>
-					<div class="prompt">
-						Write the code to turn the following box blue.
+					<div class="text">
+						<p>In this challenge, write css code that will do the following to the given square. Use the html for reference.
+						<ul>
+							<li>Make the square's background color blue</li>
+							<li>Make the text inside the square larger</li>
+							<li>Bonus: Override the square's border to make it red</li>
+						</ul>
 					</div>
 					<div class="editor" data-challenge="css"></div>
 					<!-- <div class="box-html">
 						<pre><div class="square"></div></pre>
 					</div> -->
 					<div class="display">
-						<div class="square"></div>
+						<div class="square">This is a square</div>
 					</div>
-					<button id="css-run">Test it!</button>
+					<div class="button-container">
+						<input id="css-run" value="Test it!" class="silver-flat-button" readonly/>
+					</div>
 				</div>
 			</div>
 			<div class="javascript">
-				<h1>JavaScript</h1>
+				<h1>JavaScript<span class="difficulty">Difficult</span></h1>
 				<div class="contents">
-					<div class="editor" data-challenge="js"></div>
+					<div class="text">
+						<p>Below is a function called <span class="code">fruitCount</span> that accepts a single argument, an array of fruit strings. Write JavaScript to figure out how many of each fruits there are. Alert the count of each kind of fruit to the browser window using the <span class="code">alert("Example Alert")</span> method. For example, the first testcase should alert, "You have 2 apples".
+					</div>
+					<div class="editor" data-challenge="javascript"></div>
 				</div>
 			</div>
 		</div>
