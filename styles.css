@@ -1,12 +1,45 @@
-.html .contents, .css .contents, .javascript .contents {
-	/*height: 0px;*/
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: lighter;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.intro {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	-webkit-transition: all 1s;
+}
+
+.text {
+	width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.html .contents, .css .contents, .javascript .contents, .intro .contents {
+	height: 0px;
 	overflow: hidden;
 	-webkit-transition: all 1s;
 }
 
-.html.active .contents, .css.active .contents, .javascript.active .contents {
+.html.active .contents, .css.active .contents, .javascript.active .contents, .intro.active .contents {
 	height: 500px;
 	-webkit-transition: all 1s;
+}
+
+.intro.active .contents {
+	height: 100px;
+	-webkit-transition: all 1s;
+}
+
+.intro.active {
+	-webkit-transition: all 1s;
+	margin: 75px auto;
 }
 
 .css .editor, .css .display {
@@ -14,8 +47,10 @@
 	vertical-align: top;
 }
 
-.css .editor {
-	width: 300px;
+.editor {
+	display: inline-block;
+	vertical-align: top;
+	width: 500px;
 }
 
 .css .square {
@@ -23,3 +58,92 @@
 	height: 150px;
 	border: 2px dashed black;
 }
+
+
+iframe {
+	display: inline-block;
+	width: 350px;
+	height: 350px;
+	border: 1px solid black;
+}
+
+.challenges {
+	width: 1000px;
+	height: calc(100% - 30px);
+	margin: 0 auto;
+	margin-top: 30px;
+	z-index: 1;
+	background-color: white;
+	border-radius: 7px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	box-shadow: 0px 0px 3px 0px black;
+	padding:10px;
+
+}
+
+h1 {
+	text-align: center;
+	cursor: pointer;
+	transition: all .2s;
+	margin: 0px;
+	font-weight: lighter;
+}
+
+.html.active h1, .css.active h1, .javascript.active h1 {
+	color: rgba(46,91,128,1);
+	transition: all .2s;
+}
+
+h1:hover {
+	color: rgba(46,91,128,1);
+	transition: all .2s;
+}
+
+
+
+
+.band {
+	height: 300px;
+	width: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: -1;
+	background: rgb(46,91,128); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(46,91,128,1) 0%, rgba(81,126,163,1) 0%, rgba(46,91,128,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(46,91,128,1)), color-stop(0%,rgba(81,126,163,1)), color-stop(100%,rgba(46,91,128,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(46,91,128,1) 0%,rgba(81,126,163,1) 0%,rgba(46,91,128,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(46,91,128,1) 0%,rgba(81,126,163,1) 0%,rgba(46,91,128,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(46,91,128,1) 0%,rgba(81,126,163,1) 0%,rgba(46,91,128,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(46,91,128,1) 0%,rgba(81,126,163,1) 0%,rgba(46,91,128,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e5b80', endColorstr='#2e5b80',GradientType=0 ); /* IE6-9 */
+
+	
+
+}
+
+.relative {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.noise {
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	opacity: .7;
+	background-image: url('img/noise.png');
+}
+
+
+
+
+
+
+
+
+
+
+
