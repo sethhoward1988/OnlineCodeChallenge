@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<script src="vendor/jquery.js"></script>
+		<script src="vendor/codemirror.js"></script>
+		<link rel="stylesheet" href="vendor/codemirror.css" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+
+
+
+		<div class="challenges">
+			<div class="html">
+				<h1>html</h1>
+				<div class="contents">
+					<div class="editor"></div>
+				</div>
+			</div>
+			<div class="css">
+				<h1>css</h1>
+				<div class="contents">
+					<div class="prompt">
+						Write the code to turn the following box blue.
+					</div>
+					<div class="editor"></div>
+					<!-- <div class="box-html">
+						<pre><div class="square"></div></pre>
+					</div> -->
+					<div class="display">
+						<div class="square"></div>
+					</div>
+					<button id="css-run">Test it!</button>
+					<style id="css-style-tag"></style>
+				</div>
+			</div>
+			<div class="javascript">
+				<h1>JavaScript</h1>
+				<div class="contents">
+					<div class="editor"></div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<script>
+
+		$('#css-run').on('click', function (evt) {
+			var cm = $(evt.target).parent().find(".editor")[0].codeMirror;
+			var css = cm.getValue();
+			$('style#css-style-tag').empty().text(css);
+			console.log(cm);
+		});
+
+		$('.challenges h1').on('click', function (evt) {
+			if($(evt.target).parent().hasClass('active')){
+				$(evt.target).parent().removeClass('active');
+				return;
+			}
+			$('.challenges div').removeClass('active');
+			$(evt.target).parent().addClass('active');
+		});
+
+
+		$('.editor').each(function(index, editor){
+			var myCodeMirror = CodeMirror(editor, {
+			  value: "Let's write some " + $(editor).parent().parent().attr('class') + "...\n",
+			  mode:  "javascript",
+			  lineNumbers: true
+			});
+			editor.codeMirror = myCodeMirror;
+		})
+			
+		</script>
+	</body>
+</html>

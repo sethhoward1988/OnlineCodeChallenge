@@ -1,0 +1,25 @@
+.html .contents, .css .contents, .javascript .contents {
+	/*height: 0px;*/
+	overflow: hidden;
+	-webkit-transition: all 1s;
+}
+
+.html.active .contents, .css.active .contents, .javascript.active .contents {
+	height: 500px;
+	-webkit-transition: all 1s;
+}
+
+.css .editor, .css .display {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.css .editor {
+	width: 300px;
+}
+
+.css .square {
+	width: 150px;
+	height: 150px;
+	border: 2px dashed black;
+}
