@@ -64,9 +64,16 @@ ul {
 	margin: 75px auto;
 }
 
-.css .editor, .css .display {
+.css .editor, .css .display, .css .square-code-snippet {
 	display: inline-block;
 	vertical-align: top;
+}
+
+.css .square-code-snippet {
+	width: 300px;
+	height: 100px;
+	overflow: hidden;
+	text-align: left;
 }
 
 .editor {
@@ -75,6 +82,10 @@ ul {
 	width: 600px;
 	border: 1px solid #ccc;
 	text-align: left;
+}
+
+.css .editor {
+	width: 350px;
 }
 
 .css .square {
@@ -165,7 +176,7 @@ h1:hover {
 
 .button-container {
 	width: 200px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
 /* #Silver Flat Button
@@ -213,7 +224,11 @@ h1:hover {
 }
 
 
-
+.errorContainer {
+	display: none;
+	color: red;
+	margin: 10px;
+}
 
 
 

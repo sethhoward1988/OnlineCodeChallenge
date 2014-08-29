@@ -10,8 +10,7 @@ $(function(){
 						'        <!-- Write your code here! -->\n\n' +
 						'    </body>\n' +
 						'</html>\n',
-				css: 	'.square {\n\n' +
-						'}\n',
+				css: 	'\n\n\n',
 				javascript: 'function fruitCount (fruits) {\n\n' +
 						'    // Write code here\n\n' +
 						'} \n\n' + 
@@ -38,6 +37,14 @@ $(function(){
 		  lineNumbers: true
 		});
 		app.codeMirrors[challenge] = myCodeMirror;
+	});
+
+	CodeMirror($('.square-code-snippet')[0], {
+		value:'<div id="mySquare" class="square">\n' +
+				'    This is a square\n' +
+				'</div>\n',
+		mode: 'htmlmixed',
+		theme: "mdn-like"
 	});
 
 	// Setup sliders
