@@ -11,11 +11,11 @@ $(function(){
 						'    </body>\n' +
 						'</html>\n',
 				css: 	'\n\n\n',
-				javascript: 'function fruitCount (fruits) {\n\n' +
-						'    // Write code here\n\n' +
+				javascript: 'function howMuchCola (drinks) {\n\n' +
+						'    // Write code here (hint: use a for loop!)\n\n' +
 						'} \n\n' + 
-						"fruitCount(['apple', 'banana', 'apple', 'orange', 'banana'])\n\n" +
-						"fruitCount(['kiwi', 'kiwi', 'berry', 'berry', 'berry'])\n\n"
+						"howMuchCola(['sprite', 'coca-cola', 'fanta', 'sunkist', 'coca-cola'])\n\n" +
+						"howMuchCola(['coca-cola', 'sprite', 'coca-cola', 'coca-cola', 'fanta'])\n\n"
 			},
 
 		codeMirrors: {
